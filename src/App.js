@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Menu from "./Menu";
+import Categories from "./Categories";
+import data from "./data";
+import "./App.css";
+import NavBar from "./components/Navbar";
 
-function App() {
+export default function () {
+  const [menuItems, setMenuItems] = useState(data);
+
+  const display = menuItems.map((item) => {
+    return <Menu key={item.id} item={item} />;
+  });
+
+  function displayAll() {
+    setMenuItems(data);
+  }
+
+  function displayBreakfast() {
+    console.log("from beakfast");
+
+    let breakf = data.filter((item) => item.category === "breakfast");
+    setMenuItems(breakf);
+  }
+
+  function displayLunch() {
+    let lunchf = data.filter((item) => item.category === "lunch");
+    setMenuItems(lunchf);
+  }
+
+  function displayDinner() {
+    let dinnerf = data.filter((item) => item.category === "dinner");
+    setMenuItems(dinnerf);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <h1 className="heading1">Our Menu</h1>
+      <Categories
+        displayAll={displayAll}
+        displayBreakfast={displayBreakfast}
+        displayLunch={displayLunch}
+        displayDinner={displayDinner}
+      />
+
+      <section className="menulist">{display}</section>
     </div>
   );
 }
-
-export default App;

@@ -1,0 +1,17 @@
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.btn1 {
+  margin: 5px 20px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: rgb(220, 145, 6);
+  font-weight: bold;
+  font-size: 14px;
+  border-color: rgb(220, 145, 6);
+  cursor: pointer;
+}

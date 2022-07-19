@@ -1,0 +1,42 @@
+.container-box {
+  display: flex;
+  background-color: rgb(228, 228, 165);
+  margin: 5px 40px;
+  border-radius: 10px;
+}
+
+.details-container {
+  flex: 75%;
+  padding: 5px;
+}
+.image-container {
+  flex: 25%;
+  align-self: center;
+}
+.image-menu {
+  width: fit-content;
+  max-width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.sp1 {
+  display: inline-block;
+}
+.sp2 {
+  float: right;
+  font-weight: bold;
+  margin: 25px 15px;
+}
+
+.paragraph {
+  margin-top: 0px;
+}
+
+.title {
+  margin-bottom: 4px;
+}
+
+.sp2 {
+  margin-bottom: 0px;
+}
